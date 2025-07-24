@@ -10,14 +10,34 @@
 <body class="h-full grid place-items-center">
     <div id="app">
         <section>
-            <h2 class="font-bold mb-2">Assignments</h2>
+            <h2 class="font-bold mb-2">In Progress</h2>
             <ul>
-                <li v-for="assignment in assignments">{{ assignment.name }}</li>
+                <li v-for="assignment in assignments">
+                    <label>
+                       
+                        {{ assignment.name }}
+                        <input type="checkbox" v-model="assignment.complete">
+                    </label>
+                </li>
             </ul>
+  
+        </section>
+        <section>
+            <h2 class="font-bold mb-2">Completed Assignments</h2>
+            <ul>
+                <li v-for="assignment in assignments.filter(a=>a.complete)">
+                    <label>
+                       
+                        {{ assignment.name }}
+                        <input type="checkbox" v-model="assignment.complete">
+                    </label>
+                </li>
+            </ul>
+  
         </section>
     </div>
     <script>
-        const app = {
+        let app = {
             data() {
                 return {
                     assignments: [
