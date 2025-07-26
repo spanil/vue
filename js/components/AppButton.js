@@ -1,5 +1,5 @@
-export default{ 
-    template:`
+export default {
+    template: `
         <button 
         :class ="{
         'border rounded px-5 py-2 disabled:cursor-not-allowed':true,
@@ -12,15 +12,15 @@ export default{
             <slot></slot>
             </button>
     `,
-    props:{
+    props: {
         type: {
-            type : String,
-            default : 'primary'
+            type: String,
+            default: 'primary'
         }
     },
-    data(){
+    data() {
         return {
-            processing:true
+            processing: true
         }
-    } 
+    }
 }
